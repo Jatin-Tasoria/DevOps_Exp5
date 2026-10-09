@@ -16,56 +16,56 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'java -version'
-                sh 'mvn -version'
+                bat 'java -version'
+                bat 'mvn -version'
             }
         }
 
         stage('Clean') {
             steps {
-                sh 'mvn clean'
+                bat 'mvn clean'
             }
         }
 
         stage('Validate') {
             steps {
-                sh 'mvn validate'
+                bat 'mvn validate'
             }
         }
 
         stage('Compile') {
             steps {
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
         stage('Verify') {
             steps {
-                sh 'mvn verify'
+                bat 'mvn verify'
             }
         }
 
         stage('Install') {
             steps {
-                sh 'mvn install'
+                bat 'mvn install'
             }
         }
 
         stage('Site') {
             steps {
-                sh 'mvn site'
+                bat 'mvn site'
             }
         }
     }
@@ -78,7 +78,7 @@ pipeline {
             echo 'Build failed!'
         }
         always {
-            echo 'Pipeline execution finished.'
+            echo 'Pipeline execution finibated.'
         }
     }
 }
